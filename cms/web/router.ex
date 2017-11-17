@@ -13,7 +13,7 @@ defmodule Cms.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Cms do
+  scope "/cms", Cms do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
