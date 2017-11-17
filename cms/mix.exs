@@ -20,7 +20,7 @@ defmodule Cms.Mixfile do
   def application do
     [
       mod: {Cms, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :logger_file_backend]
     ]
   end
 
@@ -40,7 +40,8 @@ defmodule Cms.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:logger_file_backend, "~> 0.0.9"}
     ]
   end
 

@@ -19,37 +19,38 @@ use Mix.Config
 # If desired, both `http:` and `https:` keys can be
 # configured to run both http and https servers on
 # different ports.
-config :cms, Cms.Endpoint,
-  http: [port: 4000],
-  debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  watchers: []
-
+config :cms,
+       Cms.Endpoint,
+       http: [
+         port: 4000
+       ],
+       debug_errors: true,
+       code_reloader: true,
+       check_origin: false,
+       watchers: []
 
 # Watch static and templates for browser reloading.
-config :cms, Cms.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{web/views/.*(ex)$},
-      ~r{web/templates/.*(eex)$}
-    ]
-  ]
-
-# Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
+config :cms,
+       Cms.Endpoint,
+       live_reload: [
+         patterns: [
+           ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+           ~r{priv/gettext/.*(po)$},
+           ~r{web/views/.*(ex)$},
+           ~r{web/templates/.*(eex)$}
+         ]
+       ]
 
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :cms, Cms.Repo,
-  adapter: Ecto.Adapters.MySQL,
-  username: "root",
-  password: "",
-  database: "cms_dev",
-  hostname: "cms-db",
-  pool_size: 10
+config :cms,
+       Cms.Repo,
+       adapter: Ecto.Adapters.MySQL,
+       username: "root",
+       password: "",
+       database: "cms_dev",
+       hostname: "cms-db",
+       pool_size: 10

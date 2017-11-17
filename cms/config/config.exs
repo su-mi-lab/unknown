@@ -7,20 +7,27 @@ use Mix.Config
 
 # General application configuration
 config :cms,
-  ecto_repos: [Cms.Repo]
+       ecto_repos: [Cms.Repo]
 
 # Configures the endpoint
-config :cms, Cms.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "fYBfeeg5HLmm+WbC1e13gV+CDcepj2e8bkmHLNJlO87raxGskw4xbQEn145YTDhF",
-  render_errors: [view: Cms.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Cms.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+config :cms,
+       Cms.Endpoint,
+       url: [
+         host: "localhost"
+       ],
+       secret_key_base: "fYBfeeg5HLmm+WbC1e13gV+CDcepj2e8bkmHLNJlO87raxGskw4xbQEn145YTDhF",
+       render_errors: [
+         view: Cms.ErrorView,
+         accepts: ~w(html json)
+       ],
+       pubsub: [
+         name: Cms.PubSub,
+         adapter: Phoenix.PubSub.PG2
+       ]
 
 # Configures Elixir's Logger
 config :logger, :console,
-  format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+       format: "$time $metadata[$level] $message\n"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
