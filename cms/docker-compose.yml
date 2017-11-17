@@ -1,0 +1,28 @@
+version: '2'
+services:
+  storage:
+    image: busybox
+    volumes:
+      - /var/lib/mysql
+    container_name: cms-storage
+  mysql:
+    image: mysql:5.6
+    volumes_from:
+      - storage
+    ports:
+      - "3306:3306"
+    container_name: cms-db
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+  web:
+    build: .
+    volumes:
+      - .:/var/opt/app
+    environment:
+      - "TZ=Japan"
+    links:
+      - mysql:mysql
+    ports:
+      - "4000:4000"
+    command: sh -c "mix phoenix.server"
+    container_name: cms-web
