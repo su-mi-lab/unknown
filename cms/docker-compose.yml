@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   storage:
     image: busybox
@@ -7,7 +7,7 @@ services:
     container_name: cms-storage
   mysql:
     image: mysql:5.6
-    volumes_from:
+    volumes:
       - storage
     ports:
       - "3306:3306"
@@ -24,5 +24,4 @@ services:
       - mysql:mysql
     ports:
       - "4000:4000"
-    command: sh -c "mix phoenix.server"
     container_name: cms-web
