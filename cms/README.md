@@ -6,11 +6,11 @@
 
 docker-compose build
 
-docker-compose run web mix deps.get
+docker-compose exec web mix deps.get
 
-docker-compose run web mix ecto.create
+docker-compose exec web mix ecto.create
 
-docker-compose run web mix ecto.migrate
+docker-compose exec web mix ecto.migrate
 
 
 ```
@@ -20,7 +20,7 @@ docker-compose run web mix ecto.migrate
 
 ```
 
-docker-compose up --force-recreate web
+docker-compose exec web mix phoenix.server
  ⇒　http://localhost:4000/
 
 ```
@@ -33,12 +33,13 @@ docker-compose stop
 
 docker-compose restart
 
+docker rm $(docker ps -aq)
 ```
 
 ## Test
 
 ```
 
-docker-compose run web mix test
+docker-compose exec web mix test
 
 ```
