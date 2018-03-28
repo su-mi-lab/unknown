@@ -9,6 +9,9 @@ use Mix.Config
 config :cms,
        ecto_repos: [Cms.Repo]
 
+config :cms, MyApp.Gettext,
+       default_locale: "ja"
+
 # Configures the endpoint
 config :cms,
        Cms.Endpoint,

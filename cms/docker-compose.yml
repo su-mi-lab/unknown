@@ -20,6 +20,7 @@ services:
       - .:/var/opt/app
     environment:
       - "TZ=Japan"
+      - "DB_HOST=cms-db"
     links:
       - mysql:mysql
     ports:

@@ -6,6 +6,8 @@
 
 docker-compose build
 
+docker-compose up -d
+
 docker-compose exec web mix deps.get
 
 docker-compose exec web mix ecto.create
