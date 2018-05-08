@@ -5,7 +5,12 @@ defmodule ApiGateway.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ApiGateway do
+  scope "/", ApiGateway do
     pipe_through :api
+
+    scope "/v1", V1, as: :v1 do
+      get "/", VersionController, :index
+    end
   end
+
 end

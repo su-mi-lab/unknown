@@ -17,18 +17,11 @@ defmodule ApiGateway.Web do
   and import those modules here.
   """
 
-  def model do
-    quote do
-      # Define common model functionality
-    end
-  end
-
   def controller do
     quote do
       use Phoenix.Controller
 
       import ApiGateway.Router.Helpers
-      import ApiGateway.Gettext
     end
   end
 
@@ -40,21 +33,12 @@ defmodule ApiGateway.Web do
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
 
       import ApiGateway.Router.Helpers
-      import ApiGateway.ErrorHelpers
-      import ApiGateway.Gettext
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
-    end
-  end
-
-  def channel do
-    quote do
-      use Phoenix.Channel
-      import ApiGateway.Gettext
     end
   end
 
