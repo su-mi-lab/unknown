@@ -6,5 +6,5 @@ config :data_store, DataStore.Repo,
        username: "root",
        password: "",
        database: "data_store_repo_test",
-       hostname: "localhost",
+       hostname: "unknown-db",
        pool: Ecto.Adapters.SQL.Sandbox
