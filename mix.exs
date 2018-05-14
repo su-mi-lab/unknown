@@ -15,6 +15,6 @@ defmodule Unknown.Mixfile do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    []
+    [{:ex_doc, ">= 0.0.0", only: :dev}]
   end
 end

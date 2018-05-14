@@ -1,4 +1,6 @@
 defmodule ApiGateway.Endpoint do
+  @moduledoc false
+
   use Phoenix.Endpoint, otp_app: :api_gateway
 
   # Serve at "/" the static files from "priv/static" directory.

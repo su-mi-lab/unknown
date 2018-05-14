@@ -1,4 +1,6 @@
 defmodule ApiGateway.ErrorView do
+  @moduledoc false
+
   use ApiGateway.Web, :view
 
   def render("404.json", _assigns) do

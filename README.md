@@ -52,3 +52,11 @@ docker rm $(docker ps -aq)
 docker-compose exec app mix test
 
 ```
+
+## Docs
+
+```
+
+docker-compose exec app mix docs
+
+```

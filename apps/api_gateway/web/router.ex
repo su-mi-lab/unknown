@@ -1,4 +1,6 @@
 defmodule ApiGateway.Router do
+  @moduledoc false
+
   use ApiGateway.Web, :router
 
   pipeline :api do
