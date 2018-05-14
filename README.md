@@ -17,9 +17,7 @@ docker-compose up -d
 
 docker-compose exec app mix deps.get
 
-docker-compose exec app mix ecto.create
-
-docker-compose exec app mix ecto.migrate
+docker-compose exec app mix ecto.setup
 ```
 
 ## Run
