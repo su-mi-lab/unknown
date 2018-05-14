@@ -1,19 +1,14 @@
-defmodule Handler.Articles do
+defmodule Handler.Article do
 
   alias DataStore.Repo
   alias DataStore.Article
 
+  @spec all() :: Map.t
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Handler.Articles.hello
-      :world
-
+  find by all
   """
-  def hello do
-    :world
+  def all do
+    Repo.all(Article)
   end
 
   @spec find(Integer.t) :: Article.t
@@ -21,6 +16,6 @@ defmodule Handler.Articles do
   find by id
   """
   def find (id) do
-    Repo.get(Article, id)
+    Repo.get!(Article, id)
   end
 end
