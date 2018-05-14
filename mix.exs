@@ -5,7 +5,8 @@ defmodule Unknown.Mixfile do
     [
       apps_path: "apps",
       start_permanent: Mix.env == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases(),
     ]
   end
 
@@ -16,5 +17,17 @@ defmodule Unknown.Mixfile do
   # Run "mix help deps" for examples and options.
   defp deps do
     [{:ex_doc, ">= 0.0.0", only: :dev}]
+  end
+
+  # Aliases are shortcuts or tasks specific to the current project.
+  # For example, to create, migrate and run the seeds file at once:
+  #
+  #     $ mix ecto.setup
+  #
+  # See the documentation for `Mix` for more info on aliases.
+  defp aliases do
+    ["ecto.setup": ["ecto.create", "ecto.migrate", "run apps/data_store/priv/repo/seeds.exs"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "test": ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "run test/test_seeds.exs", "test"]]
   end
 end
