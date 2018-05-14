@@ -1,9 +1,9 @@
-defmodule Service.Mixfile do
+defmodule Handler.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :service,
+      app: :handler,
       version: "0.1.0",
       build_path: "../../_build",
       config_path: "../../config/config.exs",
@@ -18,7 +18,7 @@ defmodule Service.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :data_store]
+      extra_applications: [:logger]
     ]
   end
 
@@ -32,7 +32,6 @@ defmodule Service.Mixfile do
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_),     do: ["lib"]
-
 
   # Aliases are shortcuts or tasks specific to the current project.
   # For example, to create, migrate and run the seeds file at once:

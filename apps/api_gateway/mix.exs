@@ -41,7 +41,7 @@ defmodule ApiGateway.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:data_store, in_umbrella: true},
-      {:service, in_umbrella: true}
+      {:handler, in_umbrella: true}
     ]
   end
 end

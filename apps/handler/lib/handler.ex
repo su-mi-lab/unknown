@@ -1,6 +1,6 @@
-defmodule Service do
+defmodule Handler do
   @moduledoc """
-  Documentation for Service.
+  Documentation for Handler.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Service do
 
   ## Examples
 
-      iex> Service.hello
+      iex> Handler.hello
       :world
 
   """
