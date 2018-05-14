@@ -10,9 +10,8 @@ defmodule DataStore.Mixfile do
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
       elixir: "~> 1.5",
-
-      start_permanent: Mix.env == :prod,
       elixirc_paths: elixirc_paths(Mix.env),
+      start_permanent: Mix.env == :prod,
       aliases: aliases(),
       deps: deps()
     ]
@@ -35,7 +34,7 @@ defmodule DataStore.Mixfile do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:test), do: ["lib", "../../test/support"]
   defp elixirc_paths(_),     do: ["lib"]
 
 
@@ -46,8 +45,8 @@ defmodule DataStore.Mixfile do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+    ["ecto.setup": ["ecto.create", "ecto.migrate", "run apps/data_store/priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
+      "test": ["ecto.create --quiet", "ecto.migrate", "run test/test_seeds.exs", "test"]]
   end
 end
