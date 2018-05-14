@@ -1,14 +1,11 @@
-defmodule Handler do
-  @moduledoc """
-  Documentation for Handler.
-  """
+defmodule Handler.Articles do
 
   @doc """
   Hello world.
 
   ## Examples
 
-      iex> Handler.hello
+      iex> Handler.Articles.hello
       :world
 
   """
