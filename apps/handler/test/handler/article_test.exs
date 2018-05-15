@@ -5,8 +5,7 @@ defmodule Handler.ArticleTest do
   alias Handler.Article
 
   test "find by all" do
-    assert Article.all
-           |> Enum.count == 1
+    assert Enum.count(Article.all) == 1
   end
 
   test "find by id" do
