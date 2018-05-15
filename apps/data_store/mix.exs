@@ -20,7 +20,7 @@ defmodule DataStore.Mixfile do
   def application do
     [
       extra_applications: [:logger, :mariaex, :ecto],
-      mod: { DataStore.Application, [] }
+      mod: {DataStore.Application, []}
     ]
   end
 
@@ -34,5 +34,5 @@ defmodule DataStore.Mixfile do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "../../test/support"]
-  defp elixirc_paths(_),     do: ["lib"]
+  defp elixirc_paths(_), do: ["lib"]
 end

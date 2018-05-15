@@ -11,6 +11,3 @@ exclude_paths:
 - config
 - test
 - apps/**/README.md
-- apps/api_gateway/mix.exs
-- apps/data_store/mix.exs
-- apps/handler/mix.exs

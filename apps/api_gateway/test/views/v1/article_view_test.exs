@@ -5,7 +5,7 @@ defmodule ApiGateway.V1.ArticleViewTest do
   import Phoenix.View
 
   test "renders index.json" do
-    articles = [Stub.Article.get_valid_attrs(),Stub.Article.get_valid_attrs()]
+    articles = [Stub.Article.get_valid_attrs(), Stub.Article.get_valid_attrs()]
     res = render(ApiGateway.V1.ArticleView, "index.json", articles: articles)
     assert Enum.count(res.data) == 2
   end

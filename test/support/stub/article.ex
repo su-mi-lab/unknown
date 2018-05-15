@@ -1,4 +1,5 @@
 defmodule Stub.Article do
+  @moduledoc false
 
   @valid_attrs %{body: "some body", title: "some title"}
   @invalid_attrs %{}
