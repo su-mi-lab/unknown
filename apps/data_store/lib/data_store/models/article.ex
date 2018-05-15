@@ -1,8 +1,4 @@
 defmodule DataStore.Article do
-  @moduledoc '''
-
-  '''
-
   use Ecto.Schema
 
   import Ecto

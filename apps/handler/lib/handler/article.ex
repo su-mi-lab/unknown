@@ -1,8 +1,4 @@
 defmodule Handler.Article do
-  @moduledoc '''
-
-  '''
-
   alias DataStore.Repo
   alias DataStore.Article
 
