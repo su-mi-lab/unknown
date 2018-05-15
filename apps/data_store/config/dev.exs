@@ -6,5 +6,5 @@ config :data_store, DataStore.Repo,
        username: "root",
        password: "",
        database: "data_store_repo",
-       hostname: "unknown-db",
+       hostname: System.get_env("DB_HOST"),
        pool_size: 10

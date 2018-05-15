@@ -20,6 +20,7 @@ services:
         - .:/var/opt/app
       environment:
         - "TZ=Japan"
+        - "DB_HOST=unknown-db"
       ports:
         - "4000:4000"
       container_name: unknown-web
