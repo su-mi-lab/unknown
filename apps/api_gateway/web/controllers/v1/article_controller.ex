@@ -4,7 +4,8 @@ defmodule ApiGateway.V1.ArticleController do
   alias Handler.Article
 
   def index(conn, _params) do
-    render(conn, "version.json", varsion: "v1.0.0")
+    articles = Article.all()
+    render(conn, "index.json", articles: articles)
   end
 
   def show(conn, %{"id" => id}) do
