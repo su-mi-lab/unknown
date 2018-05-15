@@ -5,4 +5,4 @@
 alias DataStore.Repo
 alias DataStore.Article
 
-Article.changeset(%Article{}, %{body: "some body", title: "some title"}) |> Repo.insert!()
+Article.changeset(%Article{}, Stub.Article.get_insert_attrs()) |> Repo.insert!()

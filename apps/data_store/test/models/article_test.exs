@@ -5,17 +5,14 @@ defmodule DataStoreTest do
 
   alias DataStore.Article
 
-  @valid_attrs %{body: "some body", title: "some title"}
-  @invalid_attrs %{}
-
   test "changeset with valid attributes" do
-    changeset = Article.changeset(%Article{}, @valid_attrs)
+    changeset = Article.changeset(%Article{}, Stub.Article.get_insert_attrs())
 
     assert changeset.valid?
   end
 
   test "changeset with invalid attributes" do
-    changeset = Article.changeset(%Article{}, @invalid_attrs)
+    changeset = Article.changeset(%Article{}, Stub.Article.get_invalid_attrs())
     refute changeset.valid?
   end
 end

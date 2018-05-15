@@ -5,13 +5,13 @@ defmodule ApiGateway.V1.ArticleViewTest do
   import Phoenix.View
 
   test "renders index.json" do
-    articles = [%{id: 1, body: nil, title: nil},%{id: 2, body: nil, title: nil}]
+    articles = [Stub.Article.get_valid_attrs(),Stub.Article.get_valid_attrs()]
     res = render(ApiGateway.V1.ArticleView, "index.json", articles: articles)
     assert Enum.count(res.data) == 2
   end
 
   test "renders show.json" do
-    article = %{id: 1, body: nil, title: nil}
+    article = Stub.Article.get_valid_attrs()
     res = render(ApiGateway.V1.ArticleView, "show.json", article: article)
     assert res.data == article
   end

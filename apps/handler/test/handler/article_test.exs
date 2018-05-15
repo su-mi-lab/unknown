@@ -9,7 +9,7 @@ defmodule Handler.ArticleTest do
   end
 
   test "find by id" do
-    article = Article.find(1)
+    article = Article.find(Stub.Article.get_article_id())
     assert article.title == "some title"
   end
 end
