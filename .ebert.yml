@@ -8,15 +8,16 @@ engines:
   remark-lint:
     enabled: true
 exclude_paths:
-- config
-- test
-- apps/api_gateway/config
-- apps/api_gateway/test
+- config/*
+- test/**/*
+- apps/**/README.md
+- apps/api_gateway/config/*
+- apps/api_gateway/test/*
 - apps/api_gateway/mix.exs
-- apps/data_store/config
-- apps/data_store/test
+- apps/data_store/config/*
+- apps/data_store/test/*
 - apps/data_store/mix.exs
-- apps/handler/config
-- apps/handler/test
+- apps/handler/config/*
+- apps/handler/test/*
 - apps/handler/mix.exs
 
