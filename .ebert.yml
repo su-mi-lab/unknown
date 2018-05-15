@@ -11,13 +11,13 @@ exclude_paths:
 - config/*
 - test/**/*
 - apps/**/README.md
-- apps/api_gateway/config/*
+- apps/api_gateway/config/*.exs
 - apps/api_gateway/test/*
 - apps/api_gateway/mix.exs
-- apps/data_store/config/*
+- apps/data_store/config/*.exs
 - apps/data_store/test/*
 - apps/data_store/mix.exs
-- apps/handler/config/*
+- apps/handler/config/*.exs
 - apps/handler/test/*
 - apps/handler/mix.exs
 
