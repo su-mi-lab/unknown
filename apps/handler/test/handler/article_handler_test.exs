@@ -1,10 +1,10 @@
 defmodule Handler.ArticleHandlerTest do
-  use DataStore.ModelCase
+  use TestSupporter.Cases.ModelCase
 
   alias Handler.ArticleHandler
 
   test "article_handler test" do
-    article = ArticleHandler.run(%{"id" => Stub.Article.get_article_id()})
-    assert article.title == "some title"
+    article = ArticleHandler.run(%{"id" => 1})
+    assert article.title == "some title1"
   end
 end

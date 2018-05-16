@@ -1,7 +1,7 @@
 defmodule ApiGateway.V1.ArticleControllerTest do
 
-  use ApiGateway.ConnCase
-  use DataStore.ModelCase
+  use TestSupporter.Cases.ConnCase
+  use TestSupporter.Cases.ModelCase
 
   alias Handler.ArticleHandler
 
@@ -10,7 +10,7 @@ defmodule ApiGateway.V1.ArticleControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    article = ArticleHandler.run(%{"id" => Stub.Article.get_article_id()})
+    article = ArticleHandler.run(%{"id" => 1})
     conn = get conn, v1_article_path(conn, :show, article)
     assert json_response(conn, 200)["data"]["id"] == article.id
   end

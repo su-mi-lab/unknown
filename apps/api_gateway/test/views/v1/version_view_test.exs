@@ -1,5 +1,5 @@
 defmodule ApiGateway.V1.VersionViewTest do
-  use ApiGateway.ConnCase, async: true
+  use TestSupporter.Cases.ConnCase, async: true
 
   # Bring render/3 and render_to_string/3 for testing custom views
   import Phoenix.View

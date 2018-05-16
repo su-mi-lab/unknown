@@ -28,6 +28,6 @@ defmodule Unknown.Mixfile do
   defp aliases do
     ["ecto.setup": ["ecto.create", "ecto.migrate", "run apps/data_store/priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "run test/test_seeds.exs", "test"]]
+      "test": ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "run apps/test_supporter/priv/repo/seeds.exs", "test"]]
   end
 end
