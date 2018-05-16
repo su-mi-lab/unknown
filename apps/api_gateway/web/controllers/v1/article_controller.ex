@@ -1,4 +1,7 @@
 defmodule ApiGateway.V1.ArticleController do
+
+  @moduledoc false
+
   use ApiGateway.Web, :controller
 
   def show(conn, %{"id" => id}) do
