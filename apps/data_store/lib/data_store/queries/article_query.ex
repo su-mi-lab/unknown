@@ -37,7 +37,7 @@ defmodule DataStore.ArticleQuery do
 
   @doc """
 
-  Valid data conditions
+  Join active tags data
 
   ## Examples
       iex> DataStore.ArticleQuery.join_tag(DataStore.Article)
