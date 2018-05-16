@@ -28,7 +28,6 @@ defmodule ApiGateway.Mixfile do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "web", "../../test/support"]
   defp elixirc_paths(_),     do: ["lib", "web"]
 
   # Specifies your project dependencies.
@@ -41,7 +40,8 @@ defmodule ApiGateway.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:data_store, in_umbrella: true},
-      {:handler, in_umbrella: true}
+      {:handler, in_umbrella: true},
+      {:test_supporter, [in_umbrella: true, only: :test]}
     ]
   end
 end

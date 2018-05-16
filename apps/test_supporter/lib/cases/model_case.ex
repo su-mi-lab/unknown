@@ -1,4 +1,4 @@
-defmodule DataStore.ModelCase do
+defmodule TestSupporter.Cases.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -21,7 +21,7 @@ defmodule DataStore.ModelCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import DataStore.ModelCase
+      import TestSupporter.Cases.ModelCase
     end
   end
 

@@ -1,5 +1,5 @@
 defmodule DataStoreArticleQueryTest do
-  use DataStore.ModelCase
+  use TestSupporter.Cases.ModelCase
 
   doctest DataStore.ArticleQuery
 

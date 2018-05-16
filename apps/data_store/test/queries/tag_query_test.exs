@@ -1,5 +1,5 @@
 defmodule DataStoreTagQueryTest do
-  use DataStore.ModelCase
+  use TestSupporter.Cases.ModelCase
 
   doctest DataStore.TagQuery
 

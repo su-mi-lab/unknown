@@ -10,7 +10,6 @@ defmodule Handler.Mixfile do
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
       elixir: "~> 1.5",
-      elixirc_paths: elixirc_paths(Mix.env),
       start_permanent: Mix.env == :prod,
       deps: deps()
     ]
@@ -26,12 +25,9 @@ defmodule Handler.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:data_store, in_umbrella: true}
+      {:data_store, in_umbrella: true},
+      {:test_supporter, [in_umbrella: true, only: :test]}
     ]
   end
-
-  # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "../../test/support"]
-  defp elixirc_paths(_),     do: ["lib"]
 
 end
