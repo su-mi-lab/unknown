@@ -1,4 +1,4 @@
-defmodule Handler.Article do
+defmodule Handler.ArticleHandler do
   alias DataStore.Repo
   alias DataStore.ArticleQuery
 
