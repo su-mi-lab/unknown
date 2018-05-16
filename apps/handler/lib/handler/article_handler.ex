@@ -1,4 +1,7 @@
 defmodule Handler.ArticleHandler do
+
+  @behaviour HandlerBehaviour
+
   alias DataStore.Repo
   alias DataStore.ArticleQuery
 
