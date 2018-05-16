@@ -16,4 +16,3 @@ defmodule ApiGateway.V1.ArticleControllerTest do
   end
 
 end
-
