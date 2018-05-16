@@ -4,12 +4,8 @@ defmodule Handler.ArticleTest do
 
   alias Handler.Article
 
-  test "find by all" do
-    assert Enum.count(Article.all) == 1
-  end
-
   test "find by id" do
-    article = Article.find(Stub.Article.get_article_id())
+    article = Article.run(%{"id" => Stub.Article.get_article_id()})
     assert article.title == "some title"
   end
 end
