@@ -1,13 +1,13 @@
 defmodule Handler.Article do
   alias DataStore.Repo
-  alias DataStore.Article
+  alias DataStore.ArticleQuery
 
   @spec all() :: Map.t
   @doc """
   find by all
   """
   def all do
-    Repo.all(Article)
+    Repo.all(DataStore.Article)
   end
 
   @spec find(Integer.t) :: Article.t
@@ -15,6 +15,7 @@ defmodule Handler.Article do
   find by id
   """
   def find (id) do
-    Repo.get!(Article, id)
+    ArticleQuery.select_query()
+    |> Repo.get!(id)
   end
 end

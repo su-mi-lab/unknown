@@ -1,7 +1,6 @@
 defmodule DataStore.Article do
   use Ecto.Schema
 
-  import Ecto
   import Ecto.Changeset
 
   schema "articles" do
@@ -20,4 +19,5 @@ defmodule DataStore.Article do
     |> cast(params, [:title, :body, :status, :release_date])
     |> validate_required([:title, :status, :release_date])
   end
+
 end

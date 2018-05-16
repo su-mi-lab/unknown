@@ -7,7 +7,6 @@ defmodule DataStoreTest do
 
   test "changeset with valid attributes" do
     changeset = Article.changeset(%Article{}, Stub.Article.get_insert_attrs())
-
     assert changeset.valid?
   end
 
@@ -15,4 +14,5 @@ defmodule DataStoreTest do
     changeset = Article.changeset(%Article{}, Stub.Article.get_invalid_attrs())
     refute changeset.valid?
   end
+
 end
