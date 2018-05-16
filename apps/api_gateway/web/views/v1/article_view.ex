@@ -16,6 +16,7 @@ defmodule ApiGateway.V1.ArticleView do
       id: article.id,
       title: article.title,
       body: article.body,
+      release_date: article.release_date,
     }
   end
 end

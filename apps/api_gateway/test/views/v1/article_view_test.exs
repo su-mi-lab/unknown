@@ -13,6 +13,7 @@ defmodule ApiGateway.V1.ArticleViewTest do
   test "renders show.json" do
     article = Stub.Article.get_valid_attrs()
     res = render(ApiGateway.V1.ArticleView, "show.json", article: article)
-    assert res.data == article
+
+    assert res.data == Map.delete(article, :status)
   end
 end
