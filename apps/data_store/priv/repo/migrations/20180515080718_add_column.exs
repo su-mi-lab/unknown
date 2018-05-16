@@ -8,10 +8,4 @@ defmodule DataStore.Repo.Migrations.AddColumn do
     end
   end
 
-  def down do
-    alter table(:users) do
-      remove :status
-      remove :release_date
-    end
-  end
 end

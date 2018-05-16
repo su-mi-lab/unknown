@@ -9,7 +9,4 @@ defmodule DataStore.Repo.Migrations.CreateArticlesTable do
     end
   end
 
-  def down do
-    drop table(:articles)
-  end
 end
