@@ -1,4 +1,11 @@
 defmodule DataStore.Article do
+
+  @moduledoc """
+
+  Schema for articles
+
+  """
+
   use Ecto.Schema
 
   import Ecto.Changeset

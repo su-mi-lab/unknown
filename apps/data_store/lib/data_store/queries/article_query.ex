@@ -1,16 +1,32 @@
 defmodule DataStore.ArticleQuery do
 
+  @moduledoc """
+
+  Query module for articles
+
+  """
+
   import Ecto.Query
 
   @doc """
-  Default select query
+
+  Getting the query to use by default
+
+  ## Examples
+      iex> DataStore.ArticleQuery.select_query()
+      #Ecto.Query<from a in DataStore.Article, where: a.status == ^10>
   """
   def select_query do
     DataStore.ArticleQuery.eq_active(DataStore.Article)
   end
 
   @doc """
-  Add Where status = `active status`
+
+  Valid data conditions
+
+  ## Examples
+      iex> DataStore.ArticleQuery.eq_active(DataStore.Article)
+      #Ecto.Query<from a in DataStore.Article, where: a.status == ^10>
   """
   def eq_active(struct) do
     struct

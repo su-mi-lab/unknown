@@ -1,4 +1,4 @@
-defmodule DataStoreTest do
+defmodule DataStoreArticleTest do
   use DataStore.ModelCase
 
   doctest DataStore.Article
