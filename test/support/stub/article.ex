@@ -1,7 +1,7 @@
 defmodule Stub.Article do
   @moduledoc false
 
-  @valid_attrs %{body: "some body", title: "some title", status: 1, release_date: ~N[2099-01-01 00:00:00.000000]}
+  @valid_attrs %{body: "some body", title: "some title", status: DataStore.Status.live(), release_date: ~N[2099-01-01 00:00:00.000000]}
   @invalid_attrs %{}
   @id 1
 

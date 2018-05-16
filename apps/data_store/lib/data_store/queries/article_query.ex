@@ -14,6 +14,6 @@ defmodule DataStore.ArticleQuery do
   """
   def eq_active(struct) do
     struct
-    |> where([a], a.status == 1)
+    |> where([a], a.status == ^DataStore.Status.live())
   end
 end
