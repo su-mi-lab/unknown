@@ -11,6 +11,7 @@ defmodule Handler.ArticleHandler do
 
   def run (%{"id" => id}) do
     ArticleQuery.select_query()
+    |> ArticleQuery.join_tag
     |> Repo.get!(id)
   end
 end

@@ -16,6 +16,9 @@ defmodule DataStore.Article do
     field :status, :integer
     field :release_date, :naive_datetime
     timestamps(inserted_at: :created_at)
+
+    has_many :tag_relations, DataStore.TagRelation, foreign_key: :article_id
+    has_many :tags, through: [:tag_relations, :tag]
   end
 
   @doc """

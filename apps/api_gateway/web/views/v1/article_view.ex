@@ -17,6 +17,8 @@ defmodule ApiGateway.V1.ArticleView do
       title: article.title,
       body: article.body,
       release_date: article.release_date,
+      tags: render_many(article.tags, ApiGateway.V1.TagView, "tag.json")
     }
   end
+
 end
