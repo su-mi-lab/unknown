@@ -4,7 +4,7 @@ defmodule Handler.Mixfile do
   def project do
     [
       app: :handler,
-      version: "0.1.0",
+      version: "0.0.1",
       build_path: "../../_build",
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
@@ -18,7 +18,7 @@ defmodule Handler.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :data_store]
+      extra_applications: [:logger, :logger_file_backend, :data_store]
     ]
   end
 

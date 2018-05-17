@@ -9,9 +9,8 @@ use Mix.Config
 # back to each application for organization purposes.
 import_config "../apps/*/config/config.exs"
 
-# Sample configuration (overrides the imported configuration above):
-#
-#     config :logger, :console,
-#       level: :info,
-#       format: "$date $time [$level] $metadata$message\n",
-#       metadata: [:user_id]
+# Configures Elixir's Logger
+config :logger, :console,
+       format: "$time $metadata[$level] $message\n"
+
+import_config "#{Mix.env}.exs"

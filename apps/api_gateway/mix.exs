@@ -23,12 +23,12 @@ defmodule ApiGateway.Mixfile do
   def application do
     [
       mod: {ApiGateway, []},
-      extra_applications: [:logger, :data_store]
+      extra_applications: [:logger, :logger_file_backend, :data_store]
     ]
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(_),     do: ["lib", "web"]
+  defp elixirc_paths(_), do: ["lib", "web"]
 
   # Specifies your project dependencies.
   #
