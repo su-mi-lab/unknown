@@ -16,7 +16,10 @@ defmodule Unknown.Mixfile do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    [{:ex_doc, ">= 0.0.0", only: :dev}]
+    [
+      {:logger_file_backend, "~> 0.0.9"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
@@ -26,8 +29,16 @@ defmodule Unknown.Mixfile do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    ["ecto.setup": ["ecto.create", "ecto.migrate", "run apps/data_store/priv/repo/seeds.exs"],
+    [
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run apps/data_store/priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "run apps/test_supporter/priv/repo/seeds.exs", "test"]]
+      "test": [
+        "ecto.drop",
+        "ecto.create --quiet",
+        "ecto.migrate",
+        "run apps/test_supporter/priv/repo/seeds.exs",
+        "test"
+      ]
+    ]
   end
 end
