@@ -13,7 +13,11 @@ defmodule ApiGateway.Router do
     scope "/v1", V1, as: :v1 do
       get "/", VersionController, :index
 
-      resources "/article", ArticleController, only: [:show]
+      get "/:handler", HandlerController, :index
+      get "/:handler/:id", HandlerController, :show
+      post "/:handler", HandlerController, :create
+      put "/:handler", HandlerController, :update
+      delete "/:handler", HandlerController, :delete
     end
   end
 
