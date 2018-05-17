@@ -1,4 +1,7 @@
 defmodule Handler.Entities.Article do
+
+  @moduledoc false
+
   defstruct id: nil,
             title: nil,
             body: nil,

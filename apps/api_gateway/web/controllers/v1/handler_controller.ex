@@ -9,10 +9,7 @@ defmodule ApiGateway.V1.HandlerController do
   end
 
   def show(conn, %{"handler" => handler, "id" => id}) do
-
-    items = handler_config(handler)
-            |> run_handler(:show, %{"id" => id})
-
+    items = run_handler(handler_config(handler), :show, %{"id" => id})
     render(conn, "handler.json", items: items)
   end
 

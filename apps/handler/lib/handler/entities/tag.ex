@@ -1,4 +1,7 @@
 defmodule Handler.Entities.Tag do
+
+  @moduledoc false
+
   defstruct id: nil,
             name: nil
 
