@@ -5,4 +5,3 @@ use Mix.Config
 config :api_gateway, ApiGateway.Endpoint,
   http: [port: 4001],
   server: false
-

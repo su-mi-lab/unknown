@@ -31,8 +31,7 @@ defmodule DataStore.ArticleQuery do
       #Ecto.Query<from a in DataStore.Article, where: a.status == ^10>
   """
   def eq_active(struct) do
-    struct
-    |> where([a], a.status == ^DataStore.Status.live())
+    where(struct, [a], a.status == ^DataStore.Status.live())
   end
 
   @doc """
