@@ -23,4 +23,5 @@ services:
         - "DB_HOST=unknown-db"
       ports:
         - "4000:4000"
+        - "4001:4001"
       container_name: unknown-web

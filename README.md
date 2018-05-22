@@ -60,3 +60,17 @@ docker-compose exec app mix test
 docker-compose exec app mix docs
 
 ```
+
+## Release
+
+```
+
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
+docker-compose exec app mix deps.get --only prod
+
+docker-compose exec app mix compile
+
+docker-compose exec app mix phoenix.server
+
+```
