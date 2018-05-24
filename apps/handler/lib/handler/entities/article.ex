@@ -15,7 +15,7 @@ defmodule Handler.Entities.Article do
     struct(__struct__(), Map.from_struct(params))
   end
 
-  def factory() do
-    __struct__()
-  end
+  def factory(), do: __struct__()
+
+  def factoreis(list), do: Enum.map(list, &(factory(&1)))
 end
