@@ -5,4 +5,7 @@ use Mix.Config
 config :handler,
        article: %{
          show: Handler.Articles.ShowHandler,
+       },
+       tag: %{
+         index: Handler.Tags.IndexHandler,
        }
