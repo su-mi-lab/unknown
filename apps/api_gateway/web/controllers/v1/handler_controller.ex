@@ -4,8 +4,9 @@ defmodule ApiGateway.V1.HandlerController do
 
   use ApiGateway.Web, :controller
 
-  def index(_conn) do
-
+  def index(conn, %{"handler" => handler}) do
+    items = run_handler(handler_config(handler), :index, %{})
+    render(conn, "handler.json", items: items)
   end
 
   def show(conn, %{"handler" => handler, "id" => id}) do

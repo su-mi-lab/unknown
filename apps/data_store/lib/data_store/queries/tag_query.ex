@@ -10,6 +10,18 @@ defmodule DataStore.TagQuery do
 
   @doc """
 
+  Getting the query to use by default
+
+  ## Examples
+      iex> DataStore.TagQuery.select_query()
+      #Ecto.Query<from t in DataStore.Tag, where: t.status == ^10>
+  """
+  def select_query do
+    DataStore.TagQuery.eq_active(DataStore.Tag)
+  end
+
+  @doc """
+
   Valid data conditions
 
   ## Examples
