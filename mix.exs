@@ -17,6 +17,7 @@ defmodule Unknown.Mixfile do
   # Run "mix help deps" for examples and options.
   defp deps do
     [
+      {:distillery, "~> 1.5", runtime: false},
       {:logger_file_backend, "~> 0.0.9"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
@@ -38,7 +39,7 @@ defmodule Unknown.Mixfile do
         "ecto.migrate",
         "run apps/test_supporter/priv/repo/seeds.exs",
         "test"
-      ]
+      ],
     ]
   end
 end

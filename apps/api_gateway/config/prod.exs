@@ -14,6 +14,8 @@ use Mix.Config
 config :api_gateway, ApiGateway.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "localhost"],
+  root: ".",
+  version: Application.spec(:api_gateway, :vsn),
 #  cache_static_manifest: "priv/static/cache_manifest.json",
   server: true
 

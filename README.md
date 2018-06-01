@@ -70,8 +70,20 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
 docker-compose exec app mix deps.get --only prod
 
-docker-compose exec app mix compile
+docker-compose exec app mix release
 
-docker-compose exec app mix phoenix.server
+docker-compose exec app _build/prod/rel/app/bin/app start
+
+```
+
+## Upgrades
+
+```
+
+docker-compose exec app mix deps.get --only prod
+
+docker-compose exec app mix release --upgrade
+
+docker-compose exec app _build/prod/rel/app/bin/app upgrade <version>
 
 ```
