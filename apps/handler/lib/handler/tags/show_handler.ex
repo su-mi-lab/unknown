@@ -1,7 +1,7 @@
 defmodule Handler.Tags.ShowHandler do
 
   @moduledoc """
-  Get article data
+  Get tag data
   """
 
   @behaviour HandlerBehaviour
