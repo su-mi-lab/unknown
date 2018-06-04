@@ -10,6 +10,7 @@ config :handler,
          index: Handler.Tags.IndexHandler,
          show: Handler.Tags.ShowHandler,
          create: Handler.Tags.CreateHandler,
+         update: Handler.Tags.UpdateHandler,
        },
        author: %{
          index: Handler.Authors.IndexHandler,
