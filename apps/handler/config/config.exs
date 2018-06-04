@@ -9,6 +9,7 @@ config :handler,
        tag: %{
          index: Handler.Tags.IndexHandler,
          show: Handler.Tags.ShowHandler,
+         create: Handler.Tags.CreateHandler,
        },
        author: %{
          index: Handler.Authors.IndexHandler,
