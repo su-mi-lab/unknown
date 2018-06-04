@@ -11,12 +11,14 @@ defmodule Handler.Tags.CreateHandlerTest do
     assert tag.name == "some name3"
 
     {:error, error1} = CreateHandler.run(TagDummy.valid_tag(1))
-    assert error1 == [name: {"has already been taken", []}]
+    assert error1 == [
+             %Handler.Entities.Error{field: :name, message: "has already been taken"}
+           ]
 
     {:error, error2} = CreateHandler.run(TagDummy.invalid_tag())
     assert error2 == [
-             name: {"can't be blank", [validation: :required]},
-             status: {"can't be blank", [validation: :required]}
+             %Handler.Entities.Error{field: :name, message: "can't be blank"},
+             %Handler.Entities.Error{field: :status, message: "can't be blank"}
            ]
   end
 end
