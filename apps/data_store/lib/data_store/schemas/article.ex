@@ -13,6 +13,7 @@ defmodule DataStore.Article do
   schema "articles" do
     field :title, :string
     field :body, :string
+    field :description, :string
     field :status, :integer
     field :release_date, :naive_datetime
     timestamps(inserted_at: :created_at)
@@ -26,7 +27,7 @@ defmodule DataStore.Article do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :body, :status, :release_date])
+    |> cast(params, [:title, :body, :status, :release_date, :description])
     |> validate_required([:title, :status, :release_date])
   end
 

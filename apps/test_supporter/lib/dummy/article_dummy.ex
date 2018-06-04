@@ -10,6 +10,7 @@ defmodule TestSupporter.Dummy.ArticleDummy do
       id: id,
       body: "some body" <> Integer.to_string(id),
       title: "some title" <> Integer.to_string(id),
+      description: "some description" <> Integer.to_string(id),
       status: DataStore.Status.live(),
       release_date: ~N[2099-01-01 00:00:00.000000],
       tags: []
