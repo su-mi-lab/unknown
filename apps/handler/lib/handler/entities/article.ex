@@ -5,6 +5,7 @@ defmodule Handler.Entities.Article do
   defstruct id: nil,
             title: nil,
             body: nil,
+            description: nil,
             release_date: nil,
             tags: []
 
