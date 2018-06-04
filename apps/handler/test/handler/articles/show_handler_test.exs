@@ -11,5 +11,6 @@ defmodule Handler.Articles.ShowHandlerTest do
     assert article.description == "some description1"
     assert article.release_date == ~N[2099-01-01 00:00:00.000000]
     assert Enum.count(article.tags) == 2
+    assert Enum.count(article.authors) == 2
   end
 end

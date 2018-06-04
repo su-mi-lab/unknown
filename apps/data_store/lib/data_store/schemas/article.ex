@@ -20,6 +20,9 @@ defmodule DataStore.Article do
 
     has_many :tag_relations, DataStore.TagRelation, foreign_key: :article_id
     has_many :tags, through: [:tag_relations, :tag]
+
+    has_many :author_relations, DataStore.AuthorRelation, foreign_key: :article_id
+    has_many :authors, through: [:author_relations, :author]
   end
 
   @doc """
