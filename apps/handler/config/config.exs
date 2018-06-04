@@ -8,4 +8,7 @@ config :handler,
        },
        tag: %{
          index: Handler.Tags.IndexHandler,
+       },
+       author: %{
+         index: Handler.Authors.IndexHandler,
        }

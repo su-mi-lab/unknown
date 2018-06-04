@@ -8,8 +8,6 @@ defmodule DataStore.ArticleQuery do
 
   import Ecto.Query
 
-  alias DataStore.TagQuery
-
   @doc """
 
   Getting the query to use by default
@@ -34,18 +32,4 @@ defmodule DataStore.ArticleQuery do
     where(struct, [a], a.status == ^DataStore.Status.live())
   end
 
-  @doc """
-
-  Join active tags data
-
-  ## Examples
-      iex> DataStore.ArticleQuery.join_tag(DataStore.Article)
-      #Ecto.Query<from a in DataStore.Article, left_join: t in assoc(a, :tags), where: t.status == ^10 or is_nil(t.status), preload: [tags: t]>
-  """
-  def join_tag(struct) do
-    struct
-    |> join(:left, [t], _ in assoc(t, :tags))
-    |> TagQuery.eq_active(:left_join)
-    |> preload([_, t], [tags: t])
-  end
 end

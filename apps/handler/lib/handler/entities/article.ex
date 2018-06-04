@@ -7,12 +7,15 @@ defmodule Handler.Entities.Article do
             body: nil,
             description: nil,
             release_date: nil,
-            tags: []
+            tags: [],
+            authors: []
 
   alias Handler.Entities.Tag
+  alias Handler.Entities.Author
 
   def factory(params) do
     params = Map.put(params, :tags, Tag.factoreis(params.tags))
+    |> Map.put(:authors, Author.factoreis(params.authors))
     struct(__struct__(), Map.from_struct(params))
   end
 

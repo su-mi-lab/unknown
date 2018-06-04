@@ -19,3 +19,13 @@ alias DataStore.TagRelation
 alias TestSupporter.Dummy.TagRelationDummy
 Repo.insert!(TagRelation.changeset(%TagRelation{}, TagRelationDummy.valid_tag_relation(1, 1, 1)))
 Repo.insert!(TagRelation.changeset(%TagRelation{}, TagRelationDummy.valid_tag_relation(1, 2, 2)))
+
+alias DataStore.Author
+alias TestSupporter.Dummy.AuthorDummy
+Repo.insert!(Author.changeset(%Author{}, AuthorDummy.valid_author(1)))
+Repo.insert!(Author.changeset(%Author{}, AuthorDummy.valid_author(2)))
+
+alias DataStore.AuthorRelation
+alias TestSupporter.Dummy.AuthorRelationDummy
+Repo.insert!(AuthorRelation.changeset(%AuthorRelation{}, AuthorRelationDummy.valid_author_relation(1, 1, 1)))
+Repo.insert!(AuthorRelation.changeset(%AuthorRelation{}, AuthorRelationDummy.valid_author_relation(1, 2, 2)))
