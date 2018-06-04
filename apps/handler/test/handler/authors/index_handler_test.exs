@@ -1,4 +1,4 @@
-defmodule Handler.Authors.ShowHandlerTest do
+defmodule Handler.Authors.IndexHandlerTest do
   use TestSupporter.Cases.ModelCase
 
   alias Handler.Authors.IndexHandler

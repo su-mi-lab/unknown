@@ -12,4 +12,5 @@ config :handler,
        },
        author: %{
          index: Handler.Authors.IndexHandler,
+         show: Handler.Authors.ShowHandler,
        }
