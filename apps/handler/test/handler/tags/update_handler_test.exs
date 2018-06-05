@@ -4,12 +4,11 @@ defmodule Handler.Tags.UpdateHandlerTest do
   alias Handler.Tags.UpdateHandler
   alias TestSupporter.Dummy.TagDummy
 
-  test "authors update_handler test" do
+  test "tags update_handler test" do
 
     {:ok, tag} = UpdateHandler.run(%{"id" => 2, "tag" => TagDummy.valid_tag(2)})
     assert tag.id == 2
     assert tag.name == "some name2"
-
 
     {:ok, tag} = UpdateHandler.run(%{"id" => 2, "tag" => TagDummy.valid_tag(5)})
     assert tag.id == 2

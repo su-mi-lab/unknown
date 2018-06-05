@@ -7,7 +7,7 @@ defmodule Handler.Tags.DeleteHandlerTest do
 
   alias TestSupporter.Dummy.TagDummy
 
-  test "authors update_handler test" do
+  test "tags delete_handler test" do
 
     {:ok, tag} = CreateHandler.run(TagDummy.valid_tag(999))
     {:ok, _} = DeleteHandler.run(%{"id" => tag.id})
