@@ -14,9 +14,12 @@ defmodule Handler.Entities.Article do
   alias Handler.Entities.Author
 
   def factory(params) do
-    params = Map.put(params, :tags, Tag.factoreis(params.tags))
-    |> Map.put(:authors, Author.factoreis(params.authors))
-    struct(__struct__(), Map.from_struct(params))
+    params = params
+             |> Map.put(:tags, Tag.factoreis(params.tags))
+             |> Map.put(:authors, Author.factoreis(params.authors))
+             |> Map.from_struct()
+
+    struct(__struct__(), params)
   end
 
   def factory(), do: __struct__()
