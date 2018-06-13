@@ -14,7 +14,7 @@ docker-compose run mix new unknown --umbrella
 ### Install
 
 ```
-ocker-compose build
+docker-compose build
 
 docker-compose up -d
 
@@ -66,9 +66,11 @@ docker-compose exec app mix docs
 
 ```
 
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+docker-compose -f docker-compose.prod.yml up -d
 
 docker-compose exec app mix deps.get --only prod
+
+docker-compose exec app mix ecto.setup --only prod
 
 docker-compose exec app mix release
 
