@@ -10,8 +10,8 @@ defmodule Handler.Tags.CreateHandler do
   alias DataStore.Tag
   alias Handler.Entities.Error
 
-  def run (params) do
-    case Repo.insert(Tag.changeset(%Tag{}, params)) do
+  def run (%{"item" => item}) do
+    case Repo.insert(Tag.changeset(%Tag{}, item)) do
       {:ok, data} -> {:ok, Handler.Entities.Tag.factory(data)}
       {:error, changeset} -> {:error, Error.factoreis(changeset.errors)}
     end
