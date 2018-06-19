@@ -9,7 +9,7 @@ defmodule Handler.Tags.DeleteHandlerTest do
 
   test "tags delete_handler test" do
 
-    {:ok, tag} = CreateHandler.run(TagDummy.valid_tag(999))
+    {:ok, tag} = CreateHandler.run(%{"item" => TagDummy.valid_tag(999)})
     {:ok, _} = DeleteHandler.run(%{"id" => tag.id})
 
     assert Repo.get(TagQuery.select_query(), tag.id) == nil
