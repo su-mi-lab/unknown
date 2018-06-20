@@ -22,6 +22,13 @@ defmodule TestSupporter.Cases.ConnCase do
 
       import ApiGateway.Router.Helpers
 
+      alias DataStore.Repo
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+      import TestSupporter.Cases.ModelCase
+
       # The default endpoint for testing
       @endpoint ApiGateway.Endpoint
     end
@@ -29,7 +36,11 @@ defmodule TestSupporter.Cases.ConnCase do
 
   setup tags do
 
-    _ = tags
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(DataStore.Repo)
+
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(DataStore.Repo, {:shared, self()})
+    end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
