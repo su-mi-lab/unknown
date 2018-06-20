@@ -22,8 +22,9 @@ defmodule ApiGateway.V1.HandlerController do
 
   end
 
-  def delete(_conn) do
-
+  def delete(conn, %{"handler" => handler, "id" => id}) do
+    items = run_handler(handler_config(handler), :delete, %{"id" => id})
+    render(conn, "handler.json", items: items)
   end
 
   defp handler_config(handler) do
