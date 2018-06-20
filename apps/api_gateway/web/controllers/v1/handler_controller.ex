@@ -14,12 +14,14 @@ defmodule ApiGateway.V1.HandlerController do
     render(conn, "handler.json", items: items)
   end
 
-  def create(_conn) do
-
+  def create(conn, %{"handler" => handler, "params" => item}) do
+    items = run_handler(handler_config(handler), :create, %{"item" => item})
+    render(conn, "handler.json", items: items)
   end
 
-  def update(_conn) do
-
+  def update(conn, %{"handler" => handler, "id" => id, "params" => item}) do
+    items = run_handler(handler_config(handler), :update, %{"id" => id, "item" => item})
+    render(conn, "handler.json", items: items)
   end
 
   def delete(conn, %{"handler" => handler, "id" => id}) do
