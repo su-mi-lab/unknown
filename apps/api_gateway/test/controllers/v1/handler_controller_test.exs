@@ -49,8 +49,16 @@ defmodule ApiGateway.V1.HandlerControllerTest do
        )
   end
 
-  test "DELETE :delete", %{conn: _} do
-
+  test "DELETE :delete", %{conn: conn} do
+    Application.get_all_env(:handler)
+    |> Enum.each(
+         fn {url, handlers} ->
+           case handlers do
+             %{delete: _} -> conn_delete(conn, url)
+             _ -> nil
+           end
+         end
+       )
   end
 
   defp conn_index(conn, url) do
@@ -81,7 +89,7 @@ defmodule ApiGateway.V1.HandlerControllerTest do
 
     path = v1_handler_path(
       conn,
-      :create,
+      :update,
       url,
       params: [
         id: 1,
@@ -95,6 +103,22 @@ defmodule ApiGateway.V1.HandlerControllerTest do
                |> post(path)
                |> json_response(200)
     assert %{"error" => _} = response
+  end
+
+  defp conn_delete(conn, url) do
+
+    path = v1_handler_path(
+      conn,
+      :delete,
+      url,
+      id: 1
+    )
+
+    response = conn
+               |> delete(path)
+               |> json_response(200)
+
+    assert %{"data" => _} = response
   end
 
   defp conn_show(conn, url) do
