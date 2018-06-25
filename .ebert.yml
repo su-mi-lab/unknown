@@ -11,5 +11,5 @@ exclude_paths:
 - config
 - test
 - apps/**/README.md
-- apps/api_gateway/test/**/**.exs
+- apps/api_gateway/test/**/*.exs
 
