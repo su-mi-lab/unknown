@@ -12,4 +12,3 @@ exclude_paths:
 - test
 - apps/**/README.md
 - apps/api_gateway/test/**/*.exs
-
