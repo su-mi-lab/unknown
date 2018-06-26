@@ -16,4 +16,7 @@ config :handler,
        author: %{
          index: Handler.Authors.IndexHandler,
          show: Handler.Authors.ShowHandler,
+         create: Handler.Authors.CreateHandler,
+         update: Handler.Authors.UpdateHandler,
+         delete: Handler.Authors.DeleteHandler,
        }
