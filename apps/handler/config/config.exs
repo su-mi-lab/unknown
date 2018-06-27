@@ -4,7 +4,11 @@ use Mix.Config
 
 config :handler,
        article: %{
+         index: Handler.Articles.IndexHandler,
          show: Handler.Articles.ShowHandler,
+         create: Handler.Articles.CreateHandler,
+         update: Handler.Articles.UpdateHandler,
+         delete: Handler.Articles.DeleteHandler,
        },
        tag: %{
          index: Handler.Tags.IndexHandler,
@@ -16,4 +20,7 @@ config :handler,
        author: %{
          index: Handler.Authors.IndexHandler,
          show: Handler.Authors.ShowHandler,
+         create: Handler.Authors.CreateHandler,
+         update: Handler.Authors.UpdateHandler,
+         delete: Handler.Authors.DeleteHandler,
        }

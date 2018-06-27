@@ -1,18 +1,18 @@
-defmodule Handler.Tags.CreateHandler do
+defmodule Handler.Articles.CreateHandler do
 
   @moduledoc """
-  Create tag
+  Create Article
   """
 
   @behaviour HandlerBehaviour
 
   alias DataStore.Repo
-  alias DataStore.Tag
+  alias DataStore.Article
   alias Handler.Entities.Error
 
   def run (%{"item" => item}) do
-    case Repo.insert(Tag.changeset(%Tag{}, item)) do
-      {:ok, data} -> {:ok, Handler.Entities.Tag.factory(data)}
+    case Repo.insert(Article.changeset(%Article{}, item)) do
+      {:ok, data} -> {:ok, Handler.Entities.Article.factory(data)}
       {:error, changeset} -> {:error, Error.factoreis(changeset.errors)}
     end
   end

@@ -23,6 +23,7 @@ defmodule DataStore.Author do
     struct
     |> cast(params, [:name, :status])
     |> validate_required([:name, :status])
+    |> unique_constraint(:name)
   end
 
 end

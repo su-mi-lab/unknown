@@ -11,5 +11,6 @@ defmodule Handler.Entities.Tag do
 
   def factory(), do: __struct__()
 
-  def factoreis(list), do: Enum.map(list, &(factory(&1)))
+  def factoreis(list) when is_list(list), do: Enum.map(list, &(factory(&1)))
+  def factoreis(_), do: []
 end
