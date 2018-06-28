@@ -1,0 +1,30 @@
+version: '3'
+services:
+  storage:
+    image: busybox
+    volumes:
+      - /var/lib/mysql
+    container_name: unknown-storage-prod
+  mysql:
+    image: mysql:5.6
+    volumes:
+      - storage-prod
+    ports:
+      - "3306:3306"
+    container_name: unknown-db-prod
+    environment:
+      MYSQL_ROOT_PASSWORD: {password}
+  app:
+      build: .
+      volumes:
+        - .:/var/opt/app
+      environment:
+        - "TZ=Japan"
+        - "DB_HOST=unknown-db-prod"
+        - "MIX_ENV=prod"
+        - "PORT=4000"
+        - "DB_USER={user}"
+        - "DB_PASSWORD={password}"
+      ports:
+        - "4000:4000"
+      container_name: unknown-web-prod

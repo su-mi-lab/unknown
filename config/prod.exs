@@ -6,6 +6,6 @@ config :logger,
 
 # Configures Elixir's Logger
 config :logger, :log,
-       path: "priv/log/app.log",
+       path: "../priv/log/app.log",
        level: :info,
        format: "$time $metadata[$level] $message\n"

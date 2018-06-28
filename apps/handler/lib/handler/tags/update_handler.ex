@@ -7,7 +7,6 @@ defmodule Handler.Tags.UpdateHandler do
   @behaviour HandlerBehaviour
 
   alias DataStore.Repo
-  alias DataStore.Tag
   alias DataStore.TagQuery
   alias Handler.Entities.Error
 

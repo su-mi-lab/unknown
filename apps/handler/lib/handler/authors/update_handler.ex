@@ -7,7 +7,6 @@ defmodule Handler.Authors.UpdateHandler do
   @behaviour HandlerBehaviour
 
   alias DataStore.Repo
-  alias DataStore.Author
   alias DataStore.AuthorQuery
   alias Handler.Entities.Error
 
