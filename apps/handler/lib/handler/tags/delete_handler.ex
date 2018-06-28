@@ -7,16 +7,14 @@ defmodule Handler.Tags.DeleteHandler do
   @behaviour HandlerBehaviour
 
   alias DataStore.Repo
-  alias DataStore.Tag
   alias DataStore.TagQuery
-  alias Handler.Entities.Error
 
   def run (%{"id" => id}) do
     tag = Repo.get!(TagQuery.select_query(), id)
 
     case Repo.delete(tag) do
-      {:ok, data} -> {:ok, ""}
-      {:error, changeset} -> {:error, ""}
+      {:ok, _data} -> {:ok, ""}
+      {:error, _changeset} -> {:error, ""}
     end
   end
 

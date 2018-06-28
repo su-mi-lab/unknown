@@ -72,6 +72,8 @@ docker-compose exec app mix deps.get --only prod
 
 docker-compose exec app mix ecto.setup --only prod
 
+docker-compose exec app mix phx.digest
+
 docker-compose exec app mix release
 
 docker-compose exec app _build/prod/rel/app/bin/app start
@@ -84,8 +86,12 @@ docker-compose exec app _build/prod/rel/app/bin/app start
 
 docker-compose exec app mix deps.get --only prod
 
+docker-compose exec app mix ecto.migrate
+
 docker-compose exec app mix release --upgrade
 
 docker-compose exec app _build/prod/rel/app/bin/app upgrade <version>
+
+docker-compose exec app _build/prod/rel/app/bin/app restart
 
 ```
