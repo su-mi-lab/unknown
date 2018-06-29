@@ -8,6 +8,7 @@ services:
   mysql:
     image: mysql:5.6
     volumes:
+      - ./.docker/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d
       - storage
     ports:
       - "3306:3306"
@@ -15,9 +16,9 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
   app:
-      build: .
+      build: ./.docker
       volumes:
-        - .:/var/opt/app
+        - ./src:/var/opt/app
       environment:
         - "TZ=Japan"
         - "DB_HOST=unknown-db"
