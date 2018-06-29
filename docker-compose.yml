@@ -1,20 +1,5 @@
 version: '3'
 services:
-  storage:
-    image: busybox
-    volumes:
-      - /var/lib/mysql
-    container_name: unknown-storage
-  mysql:
-    image: mysql:5.6
-    volumes:
-      - ./.docker/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d
-      - storage
-    ports:
-      - "3306:3306"
-    container_name: unknown-db
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
   app:
       build: ./.docker
       volumes:
@@ -22,6 +7,8 @@ services:
       environment:
         - "TZ=Japan"
         - "DB_HOST=unknown-db"
-      ports:
-        - "4000:4000"
       container_name: unknown-web
+networks:
+  default:
+    external:
+      name: unknown-network

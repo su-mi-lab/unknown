@@ -1,7 +1,7 @@
 # UnKnown
 
-[![CircleCI](https://circleci.com/gh/sumiyoshi/unknown.svg?style=svg)](https://circleci.com/gh/sumiyoshi/unknown)
-[![Ebert](https://ebertapp.io/github/sumiyoshi/unknown.svg)](https://ebertapp.io/github/sumiyoshi/unknown)
+[![CircleCI](https://circleci.com/gh/su-mi-lab/unknown.svg?style=svg)](https://circleci.com/gh/su-mi-lab/unknown)
+[![Ebert](https://ebertapp.io/github/su-mi-lab/unknown.svg)](https://ebertapp.io/github/su-mi-lab/unknown)
 
 ## 初回設定
 
@@ -14,9 +14,11 @@ docker-compose run mix new unknown --umbrella
 ### Install
 
 ```
+docker network create unknown-network
+
 docker-compose build
 
-docker-compose up -d
+docker-compose -f docker-compose.rb.yml -f docker-compose.db.yml -f docker-compose.yml up -d
 
 docker-compose exec app mix deps.get
 

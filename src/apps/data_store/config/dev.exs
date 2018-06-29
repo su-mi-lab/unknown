@@ -6,6 +6,6 @@ config :data_store,
        adapter: Ecto.Adapters.MySQL,
        username: "root",
        password: "",
-       database: "data_store_repo",
+       database: "data_store_repo_dev",
        hostname: System.get_env("DB_HOST"),
        pool_size: 10
