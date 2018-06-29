@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/cci-phoenix
+    working_directory: ~/cci-phoenix/src
     docker:
       - image: elixir:1.6.0
       - image: mysql:5.6
@@ -9,7 +9,6 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: "true"
     steps:
       - checkout
-      - run: cd src
       - run: pwd
       - run: ls -la
       - run: mix local.hex --force
