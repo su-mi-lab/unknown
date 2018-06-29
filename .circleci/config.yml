@@ -12,6 +12,7 @@ jobs:
       - run: mix local.hex --force
       - run: mix local.rebar
       - run:
+        name: deps.get
         working_directory: ~/cci-phoenix/src
         command: mix deps.get
       - run: DB_HOST=localhost mix test
