@@ -8,6 +8,7 @@ services:
         - "TZ=Japan"
         - "DB_HOST=unknown-db"
         - "PORT=4000"
+        - "MIX_ENV=prod"
       container_name: unknown-web
 networks:
   default:

@@ -22,7 +22,7 @@ use Mix.Config
 config :api_gateway,
        ApiGateway.Endpoint,
        http: [
-         port: 4000
+         port: System.get_env("PORT")
        ],
        debug_errors: true,
        code_reloader: true,
