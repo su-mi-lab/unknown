@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: cd src
       - run: pwd
-      - run: ll
+      - run: ls -la
       - run: mix local.hex --force
       - run: mix local.rebar
       - run: mix deps.get
