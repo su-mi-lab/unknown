@@ -1,5 +1,14 @@
 version: '3'
 services:
+  nginx_server:
+    image: nginx
+    links:
+     - app
+    volumes:
+     - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+     - "80:80"
+    container_name: unknown-nginx_server
   storage:
     image: busybox
     volumes:
@@ -22,6 +31,4 @@ services:
       environment:
         - "TZ=Japan"
         - "DB_HOST=unknown-db"
-      ports:
-        - "4000:4000"
       container_name: unknown-web
