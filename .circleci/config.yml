@@ -9,7 +9,6 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: "true"
     steps:
       - checkout
-      - run: cd src
       - run: mix local.hex --force
       - run: mix local.rebar
       - run: mix deps.get
