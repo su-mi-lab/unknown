@@ -1,7 +1,7 @@
 # UnKnown
 
 [![CircleCI](https://circleci.com/gh/sumiyoshi/unknown.svg?style=svg)](https://circleci.com/gh/sumiyoshi/unknown)
-[![Ebert](https://ebertapp.io/github/sumiyoshi/unknown.svg)](https://ebertapp.io/github/sumiyoshi/unknown)
+[![Ebert](https://ebertapp.io/github/su-mi-lab/unknown.svg)](https://ebertapp.io/github/su-mi-lab/unknown)
 
 ## 初回設定
 
