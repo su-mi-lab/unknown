@@ -1,34 +1,14 @@
 version: '3'
 services:
-  nginx_server:
-    image: nginx
-    links:
-     - app
-    volumes:
-     - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-    ports:
-     - "80:80"
-    container_name: unknown-nginx_server
-  storage:
-    image: busybox
-    volumes:
-      - /var/lib/mysql
-    container_name: unknown-storage
-  mysql:
-    image: mysql:5.7
-    volumes:
-      - ./.docker/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d
-      - storage
-    ports:
-      - "3306:3306"
-    container_name: unknown-db
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
   app:
-      build: ./.docker
+      build: ""
       volumes:
         - ./src:/var/opt/app
       environment:
         - "TZ=Japan"
         - "DB_HOST=unknown-db"
       container_name: unknown-web
+networks:
+  default:
+    external:
+      name: unknown-network

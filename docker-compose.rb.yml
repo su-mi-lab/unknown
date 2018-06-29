@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nginx_server:
+    image: nginx
+    volumes:
+     - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+     - "80:80"
+    container_name: unknown-nginx_server
+networks:
+  default:
+    external:
+      name: unknown-network

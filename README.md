@@ -14,9 +14,11 @@ docker-compose run mix new unknown --umbrella
 ### Install
 
 ```
+docker network create unknown-network
+
 docker-compose build
 
-docker-compose up -d
+docker-compose -f docker-compose.rb.yml -f docker-compose.db.yml -f docker-compose.yml up -d
 
 docker-compose exec app mix deps.get
 
